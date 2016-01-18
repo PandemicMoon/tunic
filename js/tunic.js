@@ -1,5 +1,5 @@
 "use strict";
-var publicAPIKey = 'AIzaSyBKGp1aJYPoAQlAS4FPhAKrGCn0UdDxJPQ',
+var publicAPIKey = 'AIzaSyDJZ9zP-lyOtZGMJuvSqJSqhhkSGVIZJao',
     $searchField = $('#searchBox'),
     $addField = $('#addBox'),
     queue = [],
