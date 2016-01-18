@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8"/>
+    <title>Tunic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<a href="#"><h1>Tunic</h1></a>
+				<input id="searchBox" name="search" spellcheck="false" placeholder="Play any songs (i.e. Single Ladies Beyonce)"></input>
+			</header>
+			<hr>
+			<section id="current">
+				<h2>Currently playing:</h2>
+				<div id="player"></div>
+			</section>
+			<section id="next">
+				<h2>Up next:</h2>
+				<p>Press <strong>control</strong> to add the current song to the queue. Or, search a different song to add:
+					<input id="addBox" name="add" spellcheck="false" placeholder="Add any songs"></input>
+				</p>
+				<div id="queue-container">
+					<ul id="queue"></ul>
+				</div>
+			</section>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="js/tunic.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=init"></script>
+  </body>
+</html>
