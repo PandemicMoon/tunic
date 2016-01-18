@@ -74,9 +74,17 @@ h2 {
 	margin: 1rem 0;
 	letter-spacing: 1px;
 }
+h6 {
+	font-size: 0.7rem;
+	font-weight: 400;
+}
 strong {
 	font-weight: 500;
 	color: #A6A6AF;
+}
+
+a {
+	color: #46C245;
 }
 
 /* ELEMENT STYLES */
@@ -87,6 +95,14 @@ strong {
 header {
 	background: rgba(255,255,255,0.94);
 	padding: 1.5rem 0rem;
+}
+footer {
+	width: inherit;
+	border-top: 1px solid #F5F5F5;
+	padding: 0.75rem 0;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
 }
 hr {
 	border: none;
@@ -135,7 +151,7 @@ input[name="add"] {
 }
 #queue-container {
 	overflow: auto;
-	height: 400px;
+	height: 330px;
 }
 #queue li {
 	color: #6F6F6F;
@@ -154,7 +170,7 @@ input[name="add"] {
 	margin-right: 5px;
 }
 #queue li h3 {
-	width: 266px;
+	width: 265px;
 	display: inline-block;
 }
 ::-webkit-scrollbar {
