@@ -50,7 +50,7 @@ function addCurrentlyPlayingVid(e) {
     var playerVidThumbnail = '<img src = http://img.youtube.com/vi/'+playerVidId+'/0.jpg>';
     if (e.which === 17 && playerVidId !== "" && playerVidTitle !== "") {
         queue.push(new Song(playerVidId,playerVidTitle,playerVidThumbnail));
-        $('#queue').append('<li class="group">'+playerVidThumbnail+'<h3>'+playerVidTitle+'</h3><button>Delete</button></li>');
+        $('#queue').append('<li class="group">'+vidThumbnail+'<h3>'+vidTitle+'</h3><button id="deleteButton">Delete</button><button id="queueNextButton">Queue Next</button></li>');
     }
 }
 function removeFromQueue() {
@@ -58,6 +58,15 @@ function removeFromQueue() {
     var listPosition = $('li').index(liToBeDeleted);
     queue.remove(listPosition);
     liToBeDeleted.remove();
+}
+function queueNext()
+{
+	var liToBeQueuedNext = $(this).closest('li');
+    var listPosition = $('li').index(liToBeQueuedNext);
+    var temp = queue[listPosition];
+	queue[listPosition] = queue[0];
+	queue[0] = temp;
+    liToBeQueuedNext.parent().prepend(liToBeQueuedNext);
 }
 function playVideo(videoId) {
     player.loadVideoById(videoId);
@@ -78,7 +87,7 @@ function makeRequest(keyword, type) {
             playVideo(vidId);
         } else if (type === 'addBox') {
             queue.push(new Song(vidId,vidTitle,vidThumbnail));
-            $('#queue').append('<li class="group">'+vidThumbnail+'<h3>'+vidTitle+'</h3><button>Delete</button></li>');
+            $('#queue').append('<li class="group">'+vidThumbnail+'<h3>'+vidTitle+'</h3><button id="deleteButton">Delete</button><button id="queueNextButton">Queue Next</button></li>');
         }
     });
 }
@@ -111,6 +120,7 @@ Array.prototype.remove = function(from, to) {
 };
 $(document).ready(function() {
     $(document).keydown(addCurrentlyPlayingVid);
-    $('#queue').on('click', 'button', removeFromQueue);
+    $('#queue').on('click', '#deleteButton', removeFromQueue);
+	$('#queue').on('click', '#queueNextButton', queueNext);
 });
 
